@@ -4,15 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/enzyme": "^2.8.1",
+    "@types/jest": "^20.0.2",
     "@types/webpack": "^3.0.1",
     "awesome-typescript-loader": "^3.2.1",
+    "enzyme": "^2.9.1",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1",
     "source-map-loader": "^0.2.1",
+    "ts-jest": "^20.0.6",
     "ts-node": "^3.1.0",
     "typescript": "^2.4.1",
     "webpack": "^3.0.0"
@@ -22,5 +29,17 @@
     "@types/react-dom": "^15.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }
