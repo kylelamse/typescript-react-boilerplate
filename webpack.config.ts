@@ -5,7 +5,8 @@ import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 const config: Configuration = {
     entry: { 
         app: './src/index.tsx',
-        vendor : ['react', 'react-dom']
+        vendor : ['react', 'react-dom'],
+        polyfills: ['es6-promise', 'whatwg-fetch']
     },
     output: {
         filename: "[name].js",
@@ -40,10 +41,13 @@ const config: Configuration = {
 
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
+            names: ['vendor', 'polyfills'],
             minChunks: Infinity
         }),
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin("styles.css"),
+        new webpack.ProvidePlugin({
+            'Promise': 'es6-promise'
+        })
     ]
 };
 
