@@ -1,12 +1,16 @@
 import { Configuration } from 'webpack';
 import * as webpack from 'webpack';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as HTMLWebpackPlugin from 'html-webpack-plugin';
+
+import * as path from 'path';
+import paths from './paths';
 
 const config: Configuration = {
-    entry: { 
+    entry: {
         app: './src/index.tsx',
         vendor : ['react', 'react-dom'],
-        polyfills: ['es6-promise', 'whatwg-fetch']
+        polyfills: ['es6-promise/auto', 'whatwg-fetch']
     },
     output: {
         filename: "[name].js",
@@ -27,7 +31,10 @@ const config: Configuration = {
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
 
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            {
+                test: /\.tsx?$/,
+                loader: 'awesome-typescript-loader'
+            },
 
             // Extract css files into one giant file
             {
@@ -45,8 +52,9 @@ const config: Configuration = {
             minChunks: Infinity
         }),
         new ExtractTextPlugin("styles.css"),
-        new webpack.ProvidePlugin({
-            'Promise': 'es6-promise'
+        new HTMLWebpackPlugin({
+            filename: 'index.html',
+            template: path.join(paths.template, 'index.ejs')
         })
     ]
 };
