@@ -10,7 +10,9 @@
             "allow-named-functions"
         ],
         "quotemark": [
-            false
+            true,
+            "single",
+            "jsx-double"
         ],
         "trailing-comma": [
             false

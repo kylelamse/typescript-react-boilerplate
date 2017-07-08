@@ -13,22 +13,22 @@ const config: Configuration = {
         polyfills: ['es6-promise/auto', 'whatwg-fetch']
     },
     output: {
-        filename: "[name].js",
-        path: __dirname + "/dist"
+        filename: '[name].js',
+        path: __dirname + '/dist'
     },
 
     // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
+    devtool: 'source-map',
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: ['.ts', '.tsx', '.js', '.json']
     },
 
     module: {
         rules: [
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
 
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
@@ -51,7 +51,7 @@ const config: Configuration = {
             names: ['vendor', 'polyfills'],
             minChunks: Infinity
         }),
-        new ExtractTextPlugin("styles.css"),
+        new ExtractTextPlugin('styles.css'),
         new HTMLWebpackPlugin({
             filename: 'index.html',
             template: path.join(paths.template, 'index.ejs'),

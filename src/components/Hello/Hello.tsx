@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import './hello.css';
 
 interface IHelloProps { compiler: string; framework: string; }
