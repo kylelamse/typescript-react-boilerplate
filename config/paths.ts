@@ -7,7 +7,8 @@ const paths = {
     app: path.join(projectRoot, 'src'),
     config: path.join(projectRoot, __dirname),
     template: path.join(projectRoot, 'template'),
-    public: path.join(projectRoot, 'public')
+    public: path.join(projectRoot, 'public'),
+    staticPath: '/static'
 };
 
 export default paths;

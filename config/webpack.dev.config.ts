@@ -54,7 +54,8 @@ const config: Configuration = {
         new ExtractTextPlugin("styles.css"),
         new HTMLWebpackPlugin({
             filename: 'index.html',
-            template: path.join(paths.template, 'index.ejs')
+            template: path.join(paths.template, 'index.ejs'),
+            PUBLIC_PATH: paths.staticPath
         })
     ]
 };
