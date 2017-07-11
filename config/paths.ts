@@ -5,9 +5,10 @@ const projectRoot = path.join(__dirname, '..');
 const paths = {
     dist: path.join(projectRoot, 'dist'),
     app: path.join(projectRoot, 'src'),
-    config: path.join(projectRoot, __dirname),
+    config: __dirname,
     template: path.join(projectRoot, 'template'),
     public: path.join(projectRoot, 'public'),
+    webpackTSConfig: path.join(__dirname, 'tsconfig.webpack.json'),
     staticPath: '/static'
 };
 

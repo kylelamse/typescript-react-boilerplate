@@ -33,7 +33,10 @@ const config: Configuration = {
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader'
+                loader: 'awesome-typescript-loader',
+                query: {
+                    configFileName: paths.webpackTSConfig
+                }
             },
 
             // Extract css files into one giant file
