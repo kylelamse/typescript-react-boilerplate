@@ -9,7 +9,7 @@ import paths from './paths';
 const config: Configuration = {
     entry: {
         client: 'webpack-hot-middleware/client',
-        app: paths.entry,
+        app: ['react-hot-loader/patch', paths.entry],
         vendor : ['react', 'react-dom'],
         polyfills: ['es6-promise/auto', 'whatwg-fetch']
     },
@@ -35,10 +35,17 @@ const config: Configuration = {
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader',
-                query: {
-                    configFileName: paths.webpackTSConfig
-                }
+                use: [
+                    {
+                        loader: 'react-hot-loader/webpack'
+                    },
+                    {
+                        loader: 'awesome-typescript-loader',
+                        query: {
+                            configFileName: paths.webpackTSConfig
+                        }
+                    }
+                ]
             },
 
             // Extract css files into one giant file
