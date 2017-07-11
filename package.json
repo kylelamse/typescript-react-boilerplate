@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./config/webpack.config.ts",
+    "build": "webpack --config ./config/webpack.dev.config.ts",
     "watch": "nodemon --config ./config/nodemon.json",
     "test": "jest",
     "lint": "tslint --fix -c tslint.json -p ./tslint.json"

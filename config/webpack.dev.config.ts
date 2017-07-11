@@ -8,13 +8,14 @@ import paths from './paths';
 
 const config: Configuration = {
     entry: {
-        app: './src/index.tsx',
+        app: paths.entry,
         vendor : ['react', 'react-dom'],
         polyfills: ['es6-promise/auto', 'whatwg-fetch']
     },
     output: {
         filename: '[name].js',
-        path: __dirname + '/dist'
+        path: paths.dist,
+        chunkFilename: '[id].chunk.js'
     },
 
     // Enable sourcemaps for debugging webpack's output.
