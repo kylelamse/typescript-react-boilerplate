@@ -8,6 +8,7 @@ import paths from './paths';
 
 const config: Configuration = {
     entry: {
+        client: 'webpack-hot-middleware/client',
         app: paths.entry,
         vendor : ['react', 'react-dom'],
         polyfills: ['es6-promise/auto', 'whatwg-fetch']
@@ -43,9 +44,10 @@ const config: Configuration = {
             // Extract css files into one giant file
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    use: 'css-loader'
-                })
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             }
         ]
     },
@@ -60,7 +62,8 @@ const config: Configuration = {
             filename: 'index.html',
             template: path.join(paths.template, 'index.ejs'),
             PUBLIC_PATH: paths.staticPath
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
 
