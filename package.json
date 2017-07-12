@@ -21,7 +21,6 @@
     "@types/react-hot-loader": "^3.0.3",
     "@types/webpack": "^3.0.1",
     "@types/webpack-dev-middleware": "^1.9.1",
-    "@types/webpack-env": "^1.13.0",
     "@types/webpack-hot-middleware": "^2.15.0",
     "awesome-typescript-loader": "^3.2.1",
     "css-loader": "^0.28.4",

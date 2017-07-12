@@ -16,8 +16,6 @@ const render = (Component: any) => {
 
 render(Hello);
 
-declare const module: any;
-
-if (module.hot) {
-    module.hot.accept('./components/Hello', () => { render(Hello); });
+if ((module as any).hot) {
+    (module as any).hot.accept('./components/Hello', () => { render(Hello); });
 }
