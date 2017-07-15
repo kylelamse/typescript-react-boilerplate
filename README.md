@@ -1,0 +1,3 @@
+# TypeScript/React/Webpack boilerplate
+
+I know, there are a million of these out there.  I have this here just so I can provide a nice starting point for myself when creating React apps.  Most boilerplates like this out htere don't have every file written in TypeScript, just the client-side code.  Even just writing the webpack config file in TypeScript is worth the benefit of having it in TypeScript.  All the tasks/scripts for the dev server, builder, etc will be written in TypeScript because why not?
