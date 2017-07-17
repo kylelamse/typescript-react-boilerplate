@@ -75,6 +75,35 @@
         "space-before-function-paren": [
             true, 
             "always"
+        ],
+        "no-extra-semi": true,
+        "no-multi-spaces": true,
+        "array-bracket-spacing": [
+            true,
+            "never",
+            {
+                "arraysInArray": false
+            }
+        ],
+        "block-spacing": [
+            true,
+            "always"
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format"
+        ],
+        "brace-style": [
+            true,
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "space-in-parens": [
+            false,
+            "never"
         ]
     },
     "rulesDirectory": []
