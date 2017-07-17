@@ -3,19 +3,19 @@ import * as ReactDOM from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
 
-import { Hello, IHelloProps } from './components/Hello';
+import { App } from './containers/App';
 
-const render = (Component: any) => {
+function render (Root: any) {
     ReactDOM.render(
         <AppContainer>
-            <Component compiler="TypeScript" framework="React" />
+            <Root />
         </AppContainer>,
     document.getElementById('root')
   );
-};
+}
 
-render(Hello);
+render(App);
 
 if ((module as any).hot) {
-    (module as any).hot.accept('./components/Hello', () => { render(Hello); });
+    (module as any).hot.accept('./containers/App', () => { render(App); });
 }

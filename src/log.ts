@@ -1,2 +1,2 @@
 const log = () => console.log('foo');
-export {log};
+export { log };
