@@ -92,7 +92,8 @@
         "variable-name": [
             true,
             "ban-keywords",
-            "check-format"
+            "check-format",
+            "allow-pascal-case"
         ],
         "brace-style": [
             true,
@@ -104,6 +105,11 @@
         "space-in-parens": [
             false,
             "never"
+        ],
+        "import-spacing": true,
+        "object-curly-spacing": [
+            true,
+            "always"
         ]
     },
     "rulesDirectory": []

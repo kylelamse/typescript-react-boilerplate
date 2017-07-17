@@ -1,19 +1,12 @@
 import * as React from 'react';
-import {shallow} from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 
-import HelloDefault from './index';
-import {Hello as HelloNamed} from './index';
+import { Hello, IHelloProps } from './index';
 
-describe('export strategy', () => {
-    test('default export is the same as the named export', () => {
-        expect(HelloNamed).toEqual(HelloDefault);
-    });
-});
-
-describe('Hello component', () => {
-    test('renders expected header', () => {
-        const wrapper = shallow(<HelloDefault compiler="typescript" framework="react"/>);
-        const expectedHeader = 'Hello from typescript and react!';
-        expect(wrapper.text()).toEqual(expectedHeader);
+describe('<Hello />', () => {
+    test('renders test as expected', () => {
+        const wrapper: ShallowWrapper<any, any> = shallow(<Hello compiler="Typescript" framework="React" />);
+        const expected: string = 'Hello from Typescript and React!';
+        expect(wrapper.text()).toEqual(expected);
     });
 });
