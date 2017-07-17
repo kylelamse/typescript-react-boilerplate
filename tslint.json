@@ -78,7 +78,7 @@
         "no-extra-semi": true,
         "no-multi-spaces": true,
         "array-bracket-spacing": [
-            true,
+            false,
             "never",
             {
                 "arraysInArray": false
@@ -105,12 +105,16 @@
             false,
             "never"
         ],
-        "import-spacing": true,
-        "object-curly-spacing": [
-            true,
-            "always"
+        "import-spacing": [
+            false,
+            "never"
         ],
-        "member-access": false
+        "whitespace": [
+            true,
+            "check-module"
+        ],
+        "member-access": false,
+        "prefer-object-spread": true
     },
     "rulesDirectory": []
 }
