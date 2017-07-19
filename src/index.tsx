@@ -3,7 +3,7 @@ import { ComponentClass } from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
-import { App } from './containers/App';
+import { App } from './containers';
 
 function render (Root: ComponentClass): void {
     ReactDOM.render(
@@ -17,5 +17,5 @@ function render (Root: ComponentClass): void {
 render(App);
 
 if ((module as any).hot) {
-    (module as any).hot.accept('./containers/App', () => { render(App); });
+    (module as any).hot.accept('./containers', () => { render(App); });
 }
