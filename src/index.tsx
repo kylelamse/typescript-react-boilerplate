@@ -5,6 +5,8 @@ import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { App } from './containers';
 
+import './types/globals';
+
 function render (Root: ComponentClass): void {
     ReactDOM.render(
         <AppContainer>
@@ -16,6 +18,6 @@ function render (Root: ComponentClass): void {
 
 render(App);
 
-if ((module as any).hot) {
-    (module as any).hot.accept('./containers', () => { render(App); });
+if (module.hot) {
+    module.hot.accept('./containers', () => { render(App); });
 }
