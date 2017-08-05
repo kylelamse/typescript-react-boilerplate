@@ -8,8 +8,7 @@ import paths from './paths';
 
 const config: Configuration = {
     entry: {
-        client: 'webpack-hot-middleware/client',
-        app: ['react-hot-loader/patch', paths.entry],
+        app: paths.entry,
         vendor : ['react', 'react-dom'],
         polyfill: [
             'core-js/modules/es6.promise',
@@ -25,7 +24,7 @@ const config: Configuration = {
         chunkFilename: '[name].[id].chunk.js'
     },
     // Enable sourcemaps for debugging webpack's output.
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-source-map',
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -69,13 +68,17 @@ const config: Configuration = {
             names: ['vendor', 'polyfill'],
             minChunks: Infinity
         }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
         new ExtractTextPlugin('[names].[chunkhash].css'),
         new HTMLWebpackPlugin({
             filename: 'index.html',
             template: path.join(paths.template, 'index.ejs'),
             PUBLIC_PATH: paths.staticPath
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 };
 
