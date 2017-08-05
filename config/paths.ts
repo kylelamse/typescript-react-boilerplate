@@ -1,11 +1,14 @@
 import * as path from 'path';
 
-const projectRoot = path.join(__dirname, '..');
+const projectRoot: string = path.join(__dirname, '..');
 
-const paths = {
-    entry: path.join(projectRoot, 'src', 'index.tsx'),
+interface StringMap {
+    [s: string]: string;
+}
+
+const paths: StringMap = {
+    entry: path.join(projectRoot, 'client', 'index.tsx'),
     dist: path.join(projectRoot, 'dist'),
-    app: path.join(projectRoot, 'src'),
     config: __dirname,
     template: path.join(projectRoot, 'template'),
     public: path.join(projectRoot, 'public'),
