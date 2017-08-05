@@ -71,7 +71,7 @@ const config: Configuration = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
-        new ExtractTextPlugin('[names].[chunkhash].css'),
+        new ExtractTextPlugin('[name].[chunkhash].css'),
         new HTMLWebpackPlugin({
             filename: 'index.html',
             template: path.join(paths.template, 'index.ejs'),

@@ -69,7 +69,7 @@ const config: Configuration = {
             names: ['vendor', 'polyfill'],
             minChunks: Infinity
         }),
-        new ExtractTextPlugin('[names].[chunkhash].css'),
+        new ExtractTextPlugin('[name].[chunkhash].css'),
         new HTMLWebpackPlugin({
             filename: 'index.html',
             template: path.join(paths.template, 'index.ejs'),
