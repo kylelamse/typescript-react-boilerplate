@@ -114,7 +114,11 @@
             "check-module"
         ],
         "member-access": false,
-        "prefer-object-spread": true
-    },
+        "prefer-object-spread": true,
+        "max-line-length": [
+            true,
+            80
+        ]
+   },
     "rulesDirectory": []
 }
