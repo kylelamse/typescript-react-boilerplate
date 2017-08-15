@@ -9,6 +9,8 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "jsx": "react",
     "lib": [
       "dom",
